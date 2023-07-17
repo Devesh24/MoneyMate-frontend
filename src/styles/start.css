@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@900&display=swap');
+
+/* ----------------------- START -------------------------------------- */
+/* .start{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+  } */
+  /* .start_left{
+    width: 60%;
+    background-color: var(--clr6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .start_img{
+    margin-bottom: 2rem;
+    width: 15rem;
+  }
+  .start_img img{
+    width: 100%;
+  }
+  .start_head{
+    font-family: var(--head-font);
+    font-size: 2.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--clr7);
+  }
+  .start_mid{
+    font-size: 2rem;
+    font-family: var(--head-font);
+  }
+  .start_btn_cont{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.5rem;
+    font-family: var(--main-font);
+  }
+  .start_login{
+    background-color: var(--clr1);
+    color: white;
+    font-size: 1.3rem;
+    width: 10rem;
+  }
+  .start_login:hover{
+    background-color: var(--clr1);
+    color: white;
+    opacity: 0.9;
+  }
+  .start_reg{
+    background-color: var(--clr2);
+    color: white;
+    font-size: 1.3rem;
+    width: 10rem;
+  }
+  .start_reg:hover{
+    background-color: var(--clr2);
+    color: white;
+    opacity: 0.9;
+  }
+  .start_right{
+    width: 40%;
+    background: url('./start3.jpg');
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  } */
+  /* ------------------------------------------------------------------ */
+
+.start{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.038), rgba(255, 255, 255, 0.41)), url('start.jpg');
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    /* gap: 4rem; */
+    padding: 0 4rem;
+}
+.mainHeadCont{
+    text-transform: uppercase;
+    font-family: 'Prompt', sans-serif;
+    text-align: center;
+}
+.mainHead{
+    /* color: rgb(255, 255, 255); */
+    color: rgb(255, 255, 255);
+    font-size: 8rem;
+    text-shadow: 0 0 3px #020202;
+    letter-spacing: 0.2rem;
+}
+.mainHead span{
+    color: rgb(252, 32, 32);
+    text-shadow: 0 0 3px #020202;
+}
+.mainTagline{
+    color: rgb(252, 32, 32);
+    letter-spacing: 0.8rem;
+    text-shadow: 0 0 1px black;
+}
+.mainTagline span{
+    color: white;
+    text-shadow: 0 0 3px black;
+}
+.mainLogo{
+    width: 15rem;
+}
+.mainLogo img{
+    width: 100%;
+}
+.next{
+    height: 80vh;
+    width: 100vw;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+.next_left{
+  width: 50%;
+  padding-left: 8rem;
+  font-style: italic;
+  color: red;
+  line-height: 2rem;
+  letter-spacing: 0.05rem;
+  font-family: var(--main-font);
+  text-align: center;
+}
+.next_right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
+  height: 50vh;
+  background-color: rgb(255, 248, 240);
+  margin-right: 10rem;
+  border-radius: 15rem;
+}
+.next_right h2{
+  font-family: 'Prompt', sans-serif;
+  font-size: 2.5rem;
+  text-decoration: underline;
+  color: green;
+}
+.next_right p{
+  font-family: var(--fancy-font);
+  font-size: 1.3rem;
+  color: green;
+  font-weight: 300;
+  font-style: italic;
+}
+.front_btngrp{
+  width: 70%;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+.front_btn{
+  font-size: 1.2rem;
+  border: 3px solid green;
+  font-family: var(--fancy-font);
+  padding: 1rem 2rem;
+}
+.front_btn:hover{
+  background-color: green;
+  color: white;
+}
+.front_footer{
+  width: 100%;
+  background-color: rgb(255, 248, 240);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  font-family: var(--fancy-font);
+  color: red;
+}
+.front_footer a{
+  color: blueviolet;
+}
+.front_footer a:hover{
+  color: green;
+}

@@ -1,0 +1,288 @@
+/* ----------------- TRANSACTIONS ------------------------ */
+.trans_cont{
+    width: 45%;
+    background-color: rgb(237, 237, 237);
+    /* min-height: 40vh; */
+    /* height: 100vh; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .trans_period{
+    padding-top: 0.8rem;
+    width: 100%;
+    background-color: white;
+    border-bottom: 0.1px solid rgb(192, 190, 190);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    position: sticky;
+    top: 5rem;
+  }
+  .trans_period .inner_period_btn{
+    padding: 1rem 2rem;
+    border-bottom: 3px solid white;
+  }
+  .trans_period .inner_period_btn:hover{
+    color: var(--clr2);
+    cursor: pointer;
+  }
+  
+  
+  .no_trans{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+  }
+  .face_box{
+    font-size: 7rem;
+    transition: transform 0.5s ease-in-out;
+  }
+  .face_box:hover{
+    transform: rotate(90deg);
+  }
+  .no_trans p{
+    font-size: 2rem;
+  }
+  
+  
+  .trans_summary{
+    background-color: white;
+    padding: var(--inner-padding);
+  }
+  .inflow, .outflow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+  .total{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+  .summary_btn_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .total_right{
+    border-top: 0.1px solid rgb(195, 195, 195);
+    padding-top: 0.5rem;
+  }
+  .inflow_right{
+    color: blue
+  }
+  .outflow_right{
+    color: red; 
+  }
+  .summary_btn{
+    color: var(--clr1);
+  }
+  .summary_btn:hover{
+    color: var(--clr2);
+    /* opacity: 0.9; */
+  }
+  /* --------------------------------------------------- */
+  
+
+  /* ---------------------- TRANSACTION-CARD ---------------------- */
+.trans_card{
+    width: 100%;
+    background-color: white;
+    padding: 0.4rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .trans_card:hover{
+    background-color: rgb(242, 242, 242);
+    cursor: pointer;
+  }
+  .trans_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .trans_date{
+    font-size: 0.8rem;
+  }
+  .trans_note{
+    font-size: 0.7rem;
+    color: gray;
+  }
+  .trans_right{
+    color: red;
+    font-size: 1.1rem;
+  }
+  /* ----------------------------------------------------- */
+  
+  
+  
+  /* ---------------------- TRANSACTION-DETAILS ---------------------- */
+  .trans_details{
+    width: 50%;
+    background-color: white;
+    height: 37vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 7rem;
+  }
+  .trans_details_mob{
+    background-color: white;
+    /* height: 2rem; */
+  }
+  .trans_details_head{
+    padding: var(--inner-padding);
+    width: 100%;
+    background-color: white;
+    border-bottom: 0.1px solid rgb(192, 190, 190);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .trans_details_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cross{
+    color: gray;
+    font-size: 1.1rem;
+  }
+  .cross:hover{
+    color: gray;
+    background-color: rgb(240, 240, 240);
+  }
+  .trans_details_left p{
+    font-size: 1.1rem;
+  }
+  .trans_details_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .delete_btn{
+    color: red;
+  }
+  .delete_btn:hover{
+    color: red;
+    background-color: rgb(254, 219, 219);
+  }
+  .edit_btn{
+    color: rgb(7, 218, 7);
+  }
+  .edit_btn:hover{
+    color: rgb(7, 218, 7);
+    background-color: rgb(207, 251, 207);
+  }
+  .trans_details_body{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+  }
+  .trans_details_icon{
+    width: 4rem;
+  }
+  .trans_details_icon img{
+    width: 100%;
+  }
+  .trans_details_body_left{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .title_grp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .trans_details_right span{
+    font-size: 2rem;
+  }
+  .details_title{
+    font-size: 1.5rem;
+  }
+  .details_date{
+    color: gray;
+  }
+  .details_note{
+    padding-top: 1rem;
+    border-top: 1px solid rgb(210, 209, 209);
+    color: rgb(101, 101, 101);
+  }
+  /* ----------------------------------------------------- */
+  
+
+
+
+  .dropdown-menu{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    width: 300px;
+  }
+  .accordion-body{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .accordion-body input{
+    padding-left: 0.5rem;
+    color: gray;
+    border: 1px solid gray;
+  }
+
+
+
+
+
+
+
+  @media only screen and (min-width: 768px) {
+    .trans_details_mob{
+      display: none !important;
+    }
+  }
+@media only screen and (max-width: 500px) {
+  .trans_cont{
+    width: 100%;
+  }
+  .trans_details{
+    display: none !important;
+  }
+  .trans_details_head{
+    padding: 1rem 0.5rem;
+    background-color: rgb(240, 240, 240);
+  }
+  .trans_details_left, .trans_details_right{
+    gap: 0rem;
+  }
+  .trans_details_left p, .cross{
+    font-size: 1rem;
+  }
+  .trans_details_body{
+    padding: 1rem 1.5rem;
+  }
+  .trans_details_icon{
+    width: 3rem;
+  }
+  .trans_details_right span{
+    font-size: 1.3rem;
+  }
+  .details_title{
+    font-size: 1.3rem;
+  }
+  .details_date, .details_note{
+    font-size: 0.8rem;
+  }
+  
+}

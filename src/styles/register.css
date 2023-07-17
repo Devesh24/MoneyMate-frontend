@@ -1,0 +1,69 @@
+.reg_cont{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .clr_cont{
+    position: absolute;
+    z-index: -10;
+    height: 100vh;
+    width: 100vw;
+  }
+  .reg_upper{
+    height: 40vh;
+    background-color: var(--clr2);
+  }
+  .login_lower, .reg_lower{
+    height: 60vh;
+    background-color: var(--clr6);
+  }
+  .logo{
+    width: 10rem;
+  }
+  .logo img{
+    width: 100%;
+  }
+  .reg_cont_inner{
+    height: 60vh;
+    width: 45vw;
+    background-color: white;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 3rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    font-family: var(--fancy-font);
+  }
+  .reg_input_cont input{
+    border: 2px solid #d3b9f4;
+  }
+  .reg_input_cont input:hover{
+    border: 2px solid var(--clr2);
+  }
+  .reg_input_cont label{
+    font-family: var(--content-font);
+  }
+  .reg_submit_btn{
+    background-color: var(--clr2);
+    width: 30%;
+    color: white;
+  }
+  .reg_submit_btn:hover{
+    background-color: var(--clr2);
+    opacity: 0.9;
+    color: white;
+  }
+
+  .login_link{
+    color: var(--clr1);
+  }
+  .login_link:hover{
+    color: var(--clr2);
+  }

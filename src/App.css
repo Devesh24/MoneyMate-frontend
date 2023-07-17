@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+
+:root{
+  --main-padding: 0 2rem;
+  --inner-padding: 1rem 1.5rem;
+  --clr1: #9044ee;
+  --clr2: #f15bb5;
+  --clr3: #fee440;
+  --clr4: #00bbf9;
+  --clr5: #25fde0;
+  --clr6: #dce0e0;
+  --clr7: #00710f;
+  --main-font: 'Roboto Slab', serif;
+  --content-font: 'Josefin Sans', sans-serif;
+  --fancy-font: 'Righteous', cursive;
+  --head-font: 'DynaPuff', cursive;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #aeaeae;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p{
+  margin: 0;
+}
+a, Link{
+  text-decoration: none;
+  color: inherit;
+}
+a:hover, Link:hover{
+  color: inherit;
+}
+
+/* ----------------- MAIN ------------------------ */
+.main_cont{
+  width: 100vw;
+  display: flex;
+}
+.body{
+  width: 100%;
+}
+.body_cont{
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  padding-top: 7rem;
+  font-family: var(--main-font);
+  gap: 2rem;
+}
+/* --------------------------------------------------- */
+
+/* ---------------------- BREAK ---------------------- */
+.break{
+  width: 100%;
+  height: 5vh;
+  background-color: rgb(230, 230, 230);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  color: rgb(92, 91, 91);
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+/* ----------------------------------------------------- */
+
+/* ----------------- MODAL ----------------------------- */
+.modal{
+  font-family: var(--fancy-font);
+}
+.modal_body{
+  padding: 2rem 2.5rem;
+}
+.form-control{
+  height: 2.5rem;
+}
+.modal_btn_cont{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
+  gap: 1rem;
+}
+.cancel_btn{
+  color: red;
+}
+.cancel_btn:hover{
+  color: red;
+  background-color: rgb(254, 219, 219);
+}
+.add_trans_btn{
+  color: rgb(7, 218, 7);
+}
+.add_trans_btn:hover{
+  color: rgb(7, 218, 7);
+  background-color: rgb(207, 251, 207);
+}
+/* --------------------------------------------------------- */
+
+
+
+
+
+/* ----------------------- DELETE ALERT --------------------------*/
+.delete_alert{
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: var(--fancy-font);
+  padding: 2rem 4rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.btn_grp_delete{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.btn_grp_delete .delete_btn{
+  border: 1px solid red;
+}
+.btn_grp_delete .edit_btn{
+  border: 1px solid rgb(7, 218, 7);;
+}
+/* -------------------------------------------------------------------- */
+
+
+@media only screen and (min-width: 1200px) {
+  .side_toggle{
+    visibility: hidden;
+  }
+  .body_cont{
+    padding-left: 6rem;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .sidebar{
+    visibility: hidden;
+  }
+}
+/* @media only screen and (max-width: 768px) {
+  
+} */
+@media only screen and (max-width: 500px) {
+  .body_cont{
+    padding: 1rem;
+    padding-top: 7rem;
+  }
+}
+

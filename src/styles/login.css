@@ -1,0 +1,56 @@
+.login_cont{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .login_upper{
+    height: 40vh;
+    background-color: var(--clr1);
+  }
+  .login_cont_inner{
+    height: 60vh;
+    width: 35vw;
+    background-color: white;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 3rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    font-family: var(--fancy-font);
+  }
+  .input_cont input{
+    border: 2px solid #f3bcdd;
+  }
+  .input_cont input:hover{
+    border: 2px solid var(--clr1);
+  }
+  .input_cont label{
+    font-family: var(--content-font);
+  }
+  .submit_btn{
+    background-color: var(--clr1);
+    width: 50%;
+    color: white;
+  }
+  .submit_btn:hover{
+    background-color: var(--clr1);
+    opacity: 0.9;
+    color: white;
+  }
+
+  .signup_link{
+    color: var(--clr2);
+  }
+  .signup_link:hover{
+    color: var(--clr1);
+  }
+  .login_cont h5{
+    color: var(--clr7);
+  }

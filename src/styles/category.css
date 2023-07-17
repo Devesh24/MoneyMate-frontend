@@ -1,0 +1,39 @@
+
+.cat_cont{
+  width: 40%;
+  background-color: rgb(237, 237, 237);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------------- CATEGORY-CARD ---------------------- */
+.cat_card{
+    width: 100%;
+    background-color: white;
+    padding: var(--inner-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.1px solid rgb(153, 150, 150);
+  }
+  .cat_card:hover{
+    background-color: rgb(194, 245, 255);
+    cursor: pointer;
+  }
+  .cat_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .cat_icon{
+    width: 3rem;
+    border-radius: 50%;
+  }
+  .cat_icon img{
+    width: 100%;
+  }
+  .trans_no{
+    font-size: 0.8rem;
+    color: rgb(97, 97, 97);
+  }
+  /* ----------------------------------------------------- */
