@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import BASE_URL from './baseUrl'
 
 const useFetchUser = () => {
     const [userData, setUserData] = useState([])
@@ -11,7 +12,7 @@ const useFetchUser = () => {
     const fetchData = async () => {
       setLoading(true)
       try{
-          const data = await axios.post('http://localhost:5000/api/user', {
+          const data = await axios.post(`${BASE_URL}/api/user`, {
             token: window.localStorage.getItem("token")
           })
           setUserData(data.data)

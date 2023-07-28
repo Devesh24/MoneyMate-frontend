@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SelectCat from "./SelectCat";
 import axios from "axios";
+import BASE_URL from "../baseUrl";
 
 const Addtrans = ({ name, id }) => {
   const [category, setCategory] = useState("");
@@ -19,7 +20,7 @@ const Addtrans = ({ name, id }) => {
     const [year, month, day] = date.split('-');
 
     try{
-      const data = await axios.post(`http://localhost:5000/api/${catType}`, {
+      const data = await axios.post(`${BASE_URL}/api/${catType}`, {
         userId: id,
         amount: amount,
         day: day,

@@ -4,6 +4,7 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import Alert from './Alert';
 import EditTrans from './EditTrans';
+import BASE_URL from '../baseUrl';
 // import icon from './assets/icons/icon_124.png'
 
 const Transdetails = ({clicked, handleClick, transData, userId, name}) => {
@@ -20,7 +21,7 @@ const Transdetails = ({clicked, handleClick, transData, userId, name}) => {
 
     const handleDelete = async (e) => {
         try{
-            const data = await axios.delete(`http://localhost:5000/api/${transData.type}/${userId}/${transData._id}`)
+            const data = await axios.delete(`${BASE_URL}/api/${transData.type}/${userId}/${transData._id}`)
             window.location.href = "./home"
             console.log(data);
         }

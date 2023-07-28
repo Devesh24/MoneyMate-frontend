@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/register.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import BASE_URL from "../baseUrl";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -18,7 +19,7 @@ const Register = () => {
     }
 
     try{
-        const data = await axios.post('http://localhost:5000/api/auth/register', {
+        const data = await axios.post(`${BASE_URL}/api/auth/register`, {
             name: name,
             username: username,
             email: email,

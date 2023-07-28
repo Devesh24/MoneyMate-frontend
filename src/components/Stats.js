@@ -4,6 +4,7 @@ import BarChart from "./BarChart";
 import PieChart from "./PieChart";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
+import BASE_URL from "../baseUrl";
 
 const Stats = ({ userId }) => {
   const [queryParameters] = useSearchParams();
@@ -18,11 +19,11 @@ const Stats = ({ userId }) => {
     if (query === "none") {
       try {
         const incomeRes = await axios.get(
-          `http://localhost:5000/api/income/${userId}?month=${currentYear}-${currentMonth}`
+          `${BASE_URL}/api/income/${userId}?month=${currentYear}-${currentMonth}`
         );
         setIncome(incomeRes.data);
         const expenseRes = await axios.get(
-          `http://localhost:5000/api/expense/${userId}?month=${currentYear}-${currentMonth}`
+          `${BASE_URL}/api/expense/${userId}?month=${currentYear}-${currentMonth}`
         );
         setExpense(expenseRes.data);
       } catch (err) {
@@ -31,11 +32,11 @@ const Stats = ({ userId }) => {
     } else {
       try {
         const incomeRes = await axios.get(
-          `http://localhost:5000/api/income/${userId}?${query}`
+          `${BASE_URL}/api/income/${userId}?${query}`
         );
         setIncome(incomeRes.data);
         const expenseRes = await axios.get(
-          `http://localhost:5000/api/expense/${userId}?${query}`
+          `${BASE_URL}/api/expense/${userId}?${query}`
         );
         setExpense(expenseRes.data);
       } catch (err) {

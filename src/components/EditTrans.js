@@ -5,6 +5,7 @@ import SelectcatEdit from './SelectcatEdit';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import Alert from './Alert';
+import BASE_URL from '../baseUrl';
 
 const EditTrans = ({name, transData}) => {
     const dateString = new Date(transData.year, transData.month-1, transData.day).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
@@ -14,6 +15,7 @@ const EditTrans = ({name, transData}) => {
     const [date, setDate] = useState("");
     const [note, setNote] = useState("");
     console.log(dateString);
+    
     useEffect(() => {
         setCategory(transData.category)
         setCatType(transData.type)
@@ -26,7 +28,7 @@ const EditTrans = ({name, transData}) => {
         const [year, month, day] = date.split('-');
 
         try{
-          const data = await axios.put(`http://localhost:5000/api/${transData.type}/${transData._id}`, {
+          const data = await axios.put(`${BASE_URL}/api/${transData.type}/${transData._id}`, {
             amount: amount,
             day: day,
             month: month, 

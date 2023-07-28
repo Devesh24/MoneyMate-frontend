@@ -6,6 +6,7 @@ import Transaction from "./Transaction";
 import { useEffect, useState } from "react";
 import useCatFetch from "../useCatFetch";
 import axios from "axios";
+import BASE_URL from "../baseUrl";
 
 const Transactions = ({handleClick, userId, name}) => {
 
@@ -25,11 +26,11 @@ const Transactions = ({handleClick, userId, name}) => {
     setFilter("none");
     try {
       const incomeRes = await axios.get(
-        `http://localhost:5000/api/income/${userId}?month=${currentYear}-${currentMonth}`
+        `${BASE_URL}/api/income/${userId}?month=${currentYear}-${currentMonth}`
       );
       setIncome(incomeRes.data);
       const expenseRes = await axios.get(
-        `http://localhost:5000/api/expense/${userId}?month=${currentYear}-${currentMonth}`
+        `${BASE_URL}/api/expense/${userId}?month=${currentYear}-${currentMonth}`
       );
       setExpense(expenseRes.data);
     } catch (err) {
@@ -41,13 +42,13 @@ const Transactions = ({handleClick, userId, name}) => {
     setFilter("none");
     try {
       const incomeRes = await axios.get(
-        `http://localhost:5000/api/income/${userId}?month=${currentYear}-${
+        `${BASE_URL}/api/income/${userId}?month=${currentYear}-${
           currentMonth - 1
         }`
       );
       setIncome(incomeRes.data);
       const expenseRes = await axios.get(
-        `http://localhost:5000/api/expense/${userId}?month=${currentYear}-${
+        `${BASE_URL}/api/expense/${userId}?month=${currentYear}-${
           currentMonth - 1
         }`
       );
@@ -64,11 +65,11 @@ const Transactions = ({handleClick, userId, name}) => {
     }
     try {
       const incomeRes = await axios.get(
-        `http://localhost:5000/api/income/${userId}?${filter}=${filterVal}`
+        `${BASE_URL}/api/income/${userId}?${filter}=${filterVal}`
       );
       setIncome(incomeRes.data);
       const expenseRes = await axios.get(
-        `http://localhost:5000/api/expense/${userId}?${filter}=${filterVal}`
+        `${BASE_URL}/api/expense/${userId}?${filter}=${filterVal}`
       );
       setExpense(expenseRes.data);
     } catch (err) {

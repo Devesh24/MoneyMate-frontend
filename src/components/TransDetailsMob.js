@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { confirmAlert } from 'react-confirm-alert'
 import Alert from './Alert'
 import EditTrans from './EditTrans'
+import BASE_URL from '../baseUrl'
 
 const TransDetailsMob = ({clicked, handleCardMob, transData, userId, name}) => {
    
@@ -18,7 +19,7 @@ const TransDetailsMob = ({clicked, handleCardMob, transData, userId, name}) => {
 
     const handleDelete = async (e) => {
         try{
-            const data = await axios.delete(`http://localhost:5000/api/${transData.type}/${userId}/${transData._id}`)
+            const data = await axios.delete(`${BASE_URL}/api/${transData.type}/${userId}/${transData._id}`)
             window.location.href = "./home"
             console.log(data);
         }
