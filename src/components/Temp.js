@@ -27,7 +27,6 @@ const Temp = ({ userId }) => {
         );
         setExpense(expenseRes.data);
       } catch (err) {
-        alert(err.message)
       }
     } else {
       try {
@@ -40,7 +39,6 @@ const Temp = ({ userId }) => {
         );
         setExpense(expenseRes.data);
       } catch (err) {
-        alert(err.message)
       }
     }
   };

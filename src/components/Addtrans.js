@@ -33,7 +33,7 @@ const Addtrans = ({ name, id }) => {
     }
     catch(err)
     {
-      alert(err.message)
+      
     }
   };
 
