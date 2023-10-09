@@ -75,7 +75,7 @@ const Sidebar = () => {
                     <p>Transactions</p>
                 </div>
             </Link>
-            <Link to="/stats">
+            <Link to="/stats?filter=none">
                 <div className="side_icon" style={page==="stats" ? {backgroundColor: "#d7b7ff", color: "#1b1b3a"} : {}}>
                     <p>Statistics</p>
                 </div>

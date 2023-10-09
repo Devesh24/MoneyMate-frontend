@@ -27,7 +27,7 @@ const Stats = ({ userId }) => {
         );
         setExpense(expenseRes.data);
       } catch (err) {
-        console.log(err);
+        alert(err.message)
       }
     } else {
       try {
@@ -40,7 +40,7 @@ const Stats = ({ userId }) => {
         );
         setExpense(expenseRes.data);
       } catch (err) {
-        console.log(err);
+        alert(err.message)
       }
     }
   };
@@ -147,8 +147,10 @@ const Stats = ({ userId }) => {
           </div>
         </div>
         <div className="stats_body">
+          <div className="bar_scroll_cont">
           <div className="bar_chart">
             <BarChart incomeData={compData} />
+          </div>
           </div>
           <div className="pie_chart">
             <PieChart data={incomeData} name="Income" />

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
-import SelectCat from './SelectCat';
 import SelectcatEdit from './SelectcatEdit';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
@@ -14,7 +13,6 @@ const EditTrans = ({name, transData}) => {
     const [amount, setAmount] = useState(0);
     const [date, setDate] = useState("");
     const [note, setNote] = useState("");
-    console.log(dateString);
     
     useEffect(() => {
         setCategory(transData.category)
@@ -42,7 +40,6 @@ const EditTrans = ({name, transData}) => {
         {
             alert("No Change in Data detected. Edit Failed!")
             window.location.href = "./home"
-            console.log(err);
         }
     }
 

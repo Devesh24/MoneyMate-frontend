@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Loader from './Loader'
 
 const Category = ({page, data}) => {
     const [displayStyle, setDisplayStyle] = useState("block")

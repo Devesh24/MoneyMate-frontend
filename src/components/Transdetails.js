@@ -5,10 +5,8 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import Alert from './Alert';
 import EditTrans from './EditTrans';
 import BASE_URL from '../baseUrl';
-// import icon from './assets/icons/icon_124.png'
 
 const Transdetails = ({clicked, handleClick, transData, userId, name}) => {
-
     const [display, setDisplay] = useState("none")
 
     useEffect(() => {
@@ -23,11 +21,10 @@ const Transdetails = ({clicked, handleClick, transData, userId, name}) => {
         try{
             const data = await axios.delete(`${BASE_URL}/api/${transData.type}/${userId}/${transData._id}`)
             window.location.href = "./home"
-            console.log(data);
         }
         catch(err)
         {
-            console.log(err);
+            alert(err.message)
         }
     }
 
@@ -39,7 +36,7 @@ const Transdetails = ({clicked, handleClick, transData, userId, name}) => {
             }
         });
     }
-console.log(transData);
+
   return (
     <>
         <EditTrans name={name} transData={transData} />

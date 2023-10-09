@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/stats.css";
 import BarChart from "./BarChart";
-import Loader from "./Loader";
 import PieChart from "./PieChart";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
@@ -28,7 +27,7 @@ const Temp = ({ userId }) => {
         );
         setExpense(expenseRes.data);
       } catch (err) {
-        console.log(err);
+        alert(err.message)
       }
     } else {
       try {
@@ -41,7 +40,7 @@ const Temp = ({ userId }) => {
         );
         setExpense(expenseRes.data);
       } catch (err) {
-        console.log(err);
+        alert(err.message)
       }
     }
   };

@@ -1,18 +1,11 @@
-import React, { useState } from 'react'
-import TransDetailsMob from './TransDetailsMob';
 
-const Transaction = ({handleClick, transData, name, id}) => {
+const Transaction = ({handleClick, transData}) => {
 
     const monthName = new Date(Date.UTC(2023, transData.month-1)).toLocaleString('en-US', { month: 'long' });
     const dayOfWeek = new Date(transData.year, transData.month-1, transData.day).toLocaleString('en-US', { weekday: 'long' });
-    const [clicked, setClicked] = useState(false)
 
     const handleCardClick = () => {
         handleClick(true, transData)
-        setClicked(true)
-    }
-    const handleCardMob = (val) => {
-        setClicked(val)
     }
 
   return (
@@ -41,7 +34,6 @@ const Transaction = ({handleClick, transData, name, id}) => {
                     </div>
             }
         </div>
-        {/* <TransDetailsMob clicked={clicked} handleCardMob={handleCardMob} transData={transData} name={name} userId={id}  /> */}
     </>
   )
 }

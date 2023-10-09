@@ -4,7 +4,7 @@ import axios from "axios";
 import BASE_URL from "../baseUrl";
 
 const Addtrans = ({ name, id }) => {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("")
   const [catType, setCatType] = useState("")
   const [amount, setAmount] = useState(0);
   const [date, setDate] = useState("");
@@ -20,7 +20,7 @@ const Addtrans = ({ name, id }) => {
     const [year, month, day] = date.split('-');
 
     try{
-      const data = await axios.post(`${BASE_URL}/api/${catType}`, {
+      await axios.post(`${BASE_URL}/api/${catType}`, {
         userId: id,
         amount: amount,
         day: day,
@@ -29,12 +29,11 @@ const Addtrans = ({ name, id }) => {
         category: category,
         note: note
       })
-      console.log(data);
       window.location.href = "./home"
     }
     catch(err)
     {
-        console.log(err);
+      alert(err.message)
     }
   };
 

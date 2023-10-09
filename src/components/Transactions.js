@@ -7,15 +7,26 @@ import { useEffect, useState } from "react";
 import useCatFetch from "../useCatFetch";
 import axios from "axios";
 import BASE_URL from "../baseUrl";
+import TransactionMobile from "./TransactionMobile";
 
-const Transactions = ({handleClick, userId, name}) => {
-
+const Transactions = ({ handleClick, userId, name }) => {
   const { data } = useCatFetch();
   const [period, setPeriod] = useState("current");
   const [filter, setFilter] = useState("none");
   const [filterVal, setFilterVal] = useState("");
   const [income, setIncome] = useState([]);
   const [expense, setExpense] = useState([]);
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", updateDimension);
+    return () => {
+      window.removeEventListener("resize", updateDimension);
+    };
+  }, [screenWidth]);
 
   const now = new Date();
   const currentMonth = now.getMonth() + 1;
@@ -33,9 +44,7 @@ const Transactions = ({handleClick, userId, name}) => {
         `${BASE_URL}/api/expense/${userId}?month=${currentYear}-${currentMonth}`
       );
       setExpense(expenseRes.data);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
   const fetchLastMonthData = async () => {
     setPeriod("last");
@@ -53,9 +62,7 @@ const Transactions = ({handleClick, userId, name}) => {
         }`
       );
       setExpense(expenseRes.data);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
   const fetchFilterData = async () => {
     setPeriod("filter");
@@ -72,9 +79,7 @@ const Transactions = ({handleClick, userId, name}) => {
         `${BASE_URL}/api/expense/${userId}?${filter}=${filterVal}`
       );
       setExpense(expenseRes.data);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   useEffect(() => {
@@ -123,25 +128,20 @@ const Transactions = ({handleClick, userId, name}) => {
     borderBottom: "3px solid #9044ee",
   };
 
-  const [summaryString, setSummaryString] = useState("")
+  const [summaryString, setSummaryString] = useState("");
   useEffect(() => {
-    if(period === "current")
-    {
-      setSummaryString(`month=${currentYear}-${currentMonth}`)
+    if (period === "current") {
+      setSummaryString(`month=${currentYear}-${currentMonth}`);
+    } else if (period === "last") {
+      setSummaryString(`month=${currentYear}-${currentMonth - 1}`);
+    } else {
+      setSummaryString(`${filter}=${filterVal}`);
     }
-    else if(period === "last")
-    {
-      setSummaryString(`month=${currentYear}-${currentMonth-1}`)
-    }
-    else
-    {
-      setSummaryString(`${filter}=${filterVal}`)
-    }
-  },[period, filterVal])
+  }, [period, filterVal]);
 
   return (
     <>
-        <div className="trans_cont">
+      <div className="trans_cont">
         <div className="trans_period">
           <div
             className="inner_period_btn"
@@ -158,7 +158,7 @@ const Transactions = ({handleClick, userId, name}) => {
             THIS MONTH
           </div>
           <div
-            className="inner_period_btn dropdown-center"
+            className="inner_period_btn"
             style={period === "filter" ? activestyle : {}}
           >
             <div
@@ -237,42 +237,6 @@ const Transactions = ({handleClick, userId, name}) => {
                   </div>
                 </div>
               </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseThree"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseThree"
-                  >
-                    Filter by Range
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseThree"
-                  className="accordion-collapse collapse"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div className="accordion-body">
-                    <label htmlFor="filterstart">Choose the StartDate:</label>
-                    <input
-                      type="date"
-                      name="rangestart"
-                      id="filterstart"
-                      onChange={(e) => console.log(e.target.value)}
-                    />
-                    <label htmlFor="filterend">Choose the EndDate:</label>
-                    <input
-                      type="date"
-                      name="rangeend"
-                      id="filterend"
-                      onChange={(e) => console.log(e.target.value)}
-                    />
-                  </div>
-                </div>
-              </div>
               <div className="pt-2 pe-2 d-flex justify-content-end">
                 <button
                   className="btn btn-success"
@@ -290,7 +254,11 @@ const Transactions = ({handleClick, userId, name}) => {
           <Notrans />
         ) : (
           <>
-            <Summary trans={mergedArray} filter={period==="filter" ? filter : "month"} summaryString={summaryString} />
+            <Summary
+              trans={mergedArray}
+              filter={period === "filter" ? filter : "month"}
+              summaryString={summaryString}
+            />
             {sortBycategoryCurArray.map((val) => {
               const catdata = {
                 title: val.category,
@@ -304,14 +272,23 @@ const Transactions = ({handleClick, userId, name}) => {
                 <>
                   <Break title="" />
                   <Category page="trans" data={catdata} />
-                  {val.transactions.transactions.map((i) => {
+                  {val.transactions.transactions.map((i, idx) => {
                     return (
-                      <Transaction
-                        handleClick={handleClick}
-                        transData={{ ...i, icon: catdata.icon }}
-                        name={name}
-                        id={userId}
-                      />
+                      <>
+                        {screenWidth > 1100 && (
+                          <Transaction
+                            handleClick={handleClick}
+                            transData={{ ...i, icon: catdata.icon }}
+                          />
+                        )}
+                        {screenWidth <= 1100 && (
+                          <TransactionMobile
+                            transData={{ ...i, icon: catdata.icon }}
+                            name={name}
+                            id={userId}
+                          />
+                        )}
+                      </>
                     );
                   })}
                 </>
@@ -321,7 +298,7 @@ const Transactions = ({handleClick, userId, name}) => {
         )}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Transactions
+export default Transactions;

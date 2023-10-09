@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import wallet from './assets/wallet.png'
 import Addtrans from './Addtrans'
 import {Link, useLocation} from 'react-router-dom'
 
@@ -46,18 +45,6 @@ const Navbar = ({name, id}) => {
         }
     }
 
-    const [searchVal, setSearchVal] = useState("close")
-    const [boxStyle, setBoxStyle] = useState({})
-    const [searchStyle, setSearchStyle] = useState({})
-    const toggleSearch = () => {
-        setBoxStyle({
-            border: "1px solid rgb(210, 210, 210)"
-        })
-        setSearchStyle({
-            width: "15rem"
-        })
-    }
-
   return (
     <>
         <Addtrans name={name} id={id} />
@@ -78,15 +65,6 @@ const Navbar = ({name, id}) => {
                 <a href="/home" className='nav_icon'>
                     <i className="fa-solid fa-calendar"></i>
                 </a>
-                {/* <div className='nav_icon'>
-                    <i className="fa-solid fa-eye"></i>
-                </div> */}
-                {/* <div className="searchBox" style={boxStyle}>
-                    <input type="text" className="searchInput" style={searchStyle} onChange={(e) => setSearchVal(e.target.value)} />
-                    <div className='nav_icon' onClick={toggleSearch}>
-                        <i className="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                </div> */}
                 <div className="nav_btn nav_btn_pc">
                     <button className='btn add_btn' data-bs-toggle="modal" data-bs-target="#add_trans">Add Transaction</button>
                 </div>
@@ -104,7 +82,7 @@ const Navbar = ({name, id}) => {
                     <p>Transactions</p>
                 </div>
             </Link>
-            <Link to="/stats">
+            <Link to="/stats?filter=none">
                 <div className="side_icon" style={page==="stats" ? {backgroundColor: "#d7b7ff", color: "#1b1b3a"} : {}}>
                     <p>Statistics</p>
                 </div>
