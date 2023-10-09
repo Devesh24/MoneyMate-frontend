@@ -19,7 +19,6 @@ const useCatFetch = () => {
         catch(err)
         {
             setError(err)
-            alert(err.message)
         }
     }
 

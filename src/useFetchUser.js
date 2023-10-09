@@ -23,7 +23,6 @@ const useFetchUser = () => {
       {
           setError(err)
           window.location.href = "./login"
-          alert(err.message)
       }
     }
   
