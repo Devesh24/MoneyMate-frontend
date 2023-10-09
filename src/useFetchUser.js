@@ -18,13 +18,12 @@ const useFetchUser = () => {
           setUserData(data.data)
           setLoading(false)
           setError(null)
-          console.log(data);
       }
       catch(err)
       {
           setError(err)
           window.location.href = "./login"
-          console.log(err);
+          alert(err.message)
       }
     }
   

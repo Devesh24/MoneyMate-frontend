@@ -19,18 +19,17 @@ const Register = () => {
     }
 
     try{
-        const data = await axios.post(`${BASE_URL}/api/auth/register`, {
+        await axios.post(`${BASE_URL}/api/auth/register`, {
             name: name,
             username: username,
             email: email,
             password: password
         })
         window.location.href = "./login"
-        console.log(data);
     }
     catch(err)
     {
-        console.log(err);
+        alert(err.message)
     }
   }
 

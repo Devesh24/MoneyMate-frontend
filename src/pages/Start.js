@@ -8,7 +8,7 @@ const Start = () => {
         <div className="start">
             <div className="mainHeadCont">
                 <h1 className="mainHead">Money<span>Mate</span></h1>
-                <h5 className='mainTagline mt-4'><span>Track |</span>| Analyze |<span>| Save</span></h5>
+                <h5 className='mainTagline'><span>Track |</span>| Analyze |<span>| Save</span></h5>
             </div>
         </div>
         <div className="next">

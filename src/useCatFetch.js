@@ -19,14 +19,13 @@ const useCatFetch = () => {
         catch(err)
         {
             setError(err)
-            console.log(err);
+            alert(err.message)
         }
     }
 
     useEffect(() => {
         fetchData()
     },[])
-    console.log(data);
 
   return { data, loading, error }
 }

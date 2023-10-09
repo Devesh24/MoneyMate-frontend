@@ -158,14 +158,17 @@ a:hover, Link:hover{
   .sidebar{
     visibility: hidden;
   }
+  .delete_alert{
+    width: 100%;
+  }
 }
-/* @media only screen and (max-width: 768px) {
-  
-} */
 @media only screen and (max-width: 500px) {
   .body_cont{
     padding: 1rem;
     padding-top: 7rem;
+  }
+  .break{
+    height: 3.5vh;
   }
 }
 

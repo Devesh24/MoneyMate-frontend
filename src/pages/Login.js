@@ -15,18 +15,16 @@ const Login = () => {
             email: email,
             password: password
         })
-        console.log(data);
         if(data.status === 200)
         {
             alert("Login successfull")
             window.localStorage.setItem("token", data.data.accessToken)
-            console.log(data.data.accessToken);
             window.location.href = "./home"
         }
     }
     catch(err)
     {
-        console.log(err);
+      alert(err.message)
     }
   }
     

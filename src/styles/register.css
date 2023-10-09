@@ -14,11 +14,11 @@
     width: 100vw;
   }
   .reg_upper{
-    height: 40vh;
+    min-height: 40vh;
     background-color: var(--clr2);
   }
   .login_lower, .reg_lower{
-    height: 60vh;
+    min-height: 60vh;
     background-color: var(--clr6);
   }
   .logo{
@@ -28,7 +28,6 @@
     width: 100%;
   }
   .reg_cont_inner{
-    height: 60vh;
     width: 45vw;
     background-color: white;
     border-radius: 2rem;
@@ -37,7 +36,7 @@
     align-items: center;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 0 3rem;
+    padding: 2rem 3rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     font-family: var(--fancy-font);
   }
@@ -66,4 +65,30 @@
   }
   .login_link:hover{
     color: var(--clr2);
+  }
+
+
+
+
+  @media only screen and (max-width: 1199px) {
+    .reg_cont_inner{
+      width: 70vw;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    .reg_cont_inner{
+      width: 70vw;
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    .reg_cont_inner{
+      width: 95vw;
+      padding: 2rem;
+      text-align: center;
+      gap: 0rem;
+      border-radius: 1rem;
+    }
+    .reg_submit_btn{
+      width: 50%; 
+    }
   }

@@ -2,8 +2,6 @@
 .trans_cont{
     width: 45%;
     background-color: rgb(237, 237, 237);
-    /* min-height: 40vh; */
-    /* height: 100vh; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   .trans_period{
@@ -17,6 +15,7 @@
     color: gray;
     position: sticky;
     top: 5rem;
+    text-align: center;
   }
   .trans_period .inner_period_btn{
     padding: 1rem 2rem;
@@ -84,7 +83,6 @@
   }
   .summary_btn:hover{
     color: var(--clr2);
-    /* opacity: 0.9; */
   }
   /* --------------------------------------------------- */
   
@@ -134,7 +132,6 @@
   }
   .trans_details_mob{
     background-color: white;
-    /* height: 2rem; */
   }
   .trans_details_head{
     padding: var(--inner-padding);
@@ -221,7 +218,10 @@
     color: rgb(101, 101, 101);
   }
   /* ----------------------------------------------------- */
-  
+  .trans_mob_details_right{
+    text-align: end;
+    padding: 0;
+  }
 
 
 
@@ -246,18 +246,41 @@
 
 
 
-
-  @media only screen and (min-width: 768px) {
-    .trans_details_mob{
-      display: none !important;
-    }
+@media only screen and (min-width: 768px) {
+  .trans_details_mob{
+    display: none !important;
   }
-@media only screen and (max-width: 500px) {
+}
+@media only screen and (max-width: 1100px) {
   .trans_cont{
-    width: 100%;
+    width: 70%;
+  }
+  .trans_period .inner_period_btn{
+    padding: 1rem;
   }
   .trans_details{
     display: none !important;
+  }
+  .transactionaccordian .accordion-button{
+    padding: 0.5rem 0 !important;
+    margin: 0;
+  }
+  .transactionaccordian .accordion-button::after {
+    background-image: initial;
+  }
+  .transactionaccordian .accordion-button:not(.collapsed)::after {
+    background-image: initial;
+  }
+  .transactionaccordian .trans_card{
+    background-color: inherit;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .trans_cont{
+    width: 100%;
+  }
+  .trans_period .inner_period_btn{
+    padding: 1rem;
   }
   .trans_details_head{
     padding: 1rem 0.5rem;
@@ -284,5 +307,4 @@
   .details_date, .details_note{
     font-size: 0.8rem;
   }
-  
 }

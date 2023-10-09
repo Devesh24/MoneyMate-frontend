@@ -12,7 +12,6 @@
     background-color: var(--clr1);
   }
   .login_cont_inner{
-    height: 60vh;
     width: 35vw;
     background-color: white;
     border-radius: 2rem;
@@ -21,7 +20,7 @@
     align-items: center;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 0 3rem;
+    padding: 2rem 3rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     font-family: var(--fancy-font);
   }
@@ -53,4 +52,27 @@
   }
   .login_cont h5{
     color: var(--clr7);
+  }
+
+
+
+
+
+  @media only screen and (max-width: 1199px) {
+    .login_cont_inner{
+      width: 50vw;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    .login_cont_inner{
+      width: 70vw;
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    .login_cont_inner{
+      width: 95vw;
+      padding: 2rem;
+      text-align: center;
+      gap: 0.5rem;
+    }
   }

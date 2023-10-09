@@ -37,3 +37,18 @@
     color: rgb(97, 97, 97);
   }
   /* ----------------------------------------------------- */
+
+
+  @media only screen and (max-width: 1100px) {
+    .cat_cont{
+      width: 70%;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    .cat_cont{
+      width: 100%;
+    }
+    .cat_card{
+      padding: 1rem;
+    }
+  }
